@@ -20,4 +20,8 @@ Tras hacer todas estas Funciones, sabremos el estado de nuestro telefono a tiemp
 ## Update con Gradle
 
 Hoy hemos actualizado la version de gradle, para aprender los inconvenientes que puede tener esto,
-al mismo tiempo trabajar desde ya, todos con la misma version
+al mismo tiempo trabajar desde ya, todos con la misma version:
+
+    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+    implementation("androidx.activity:activity-compose:1.7.2")
