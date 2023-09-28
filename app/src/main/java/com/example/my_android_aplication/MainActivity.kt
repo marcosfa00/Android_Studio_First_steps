@@ -5,6 +5,8 @@ import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -40,13 +42,54 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-
         Log.d(TAG, "Estoy programando en android")
+
+        calcular(3,5,fun(numero1:Int,numero2:Int){
+            val suma = numero1+numero2
+            Log.d("Calcular",suma.toString())
+
+        })
+        calcular(7,8,fun(a:Int,b:Int){
+            val resta =a-b
+            Log.d("Calcular",resta.toString())
+        })
+        sinParametros(5,6,fun(){
+            Log.d("Parametros","Solo LOG")
+        })
+
+
     }
+
+    fun calcular(a:Int=0, b:Int=0, operation:(a:Int, b:Int)->Unit){
+        operation(a,b)
+
+    }
+    fun sinParametros(a:Int,b:Int,noMuestra:()->Unit){
+
+        noMuestra()
+    }
+    @Composable
+    fun Interfazusuario(){
+        login()
+        texto_descriptivo()
+        chat()
+    }
+
+    fun login(){
+        //texto y boton para logearse
+    }
+    fun texto_descriptivo(){
+        //Texto y boton decriptyivo
+    }
+    fun chat(){
+        //funcion de chat
+    }
+
 
     override fun onStart() {
             super.onStart()
             Log.d(TAG,"Esto se ejecuta en el start del telefono")
+
         }
 
         override fun onPause() {
@@ -69,7 +112,11 @@ class MainActivity : ComponentActivity() {
             Log.d(TAG,"Destroy")
         }
 
+
+
     }
+
+
 
 
 @Composable
@@ -78,7 +125,18 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             text = "Mi nombre es  $name!",
             modifier = modifier,
             fontSize = 40.sp
+
     )
+    Button(onClick = { Log.d("calcular","Click!!!")},
+
+
+        ) {
+
+        Text(text="Click Me")
+
+    }
+
+
 }
 
 @Preview(showBackground = true)

@@ -15,3 +15,9 @@ Pondré el ejemplo de la función de Pausa
 Esto se debe hacer siempre dentro de la función **On Start**
 
 Tras hacer todas estas Funciones, sabremos el estado de nuestro telefono a tiempo real
+
+
+## Update con Gradle
+
+Hoy hemos actualizado la version de gradle, para aprender los inconvenientes que puede tener esto,
+al mismo tiempo trabajar desde ya, todos con la misma version
